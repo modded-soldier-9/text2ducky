@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuckyScript Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f3f4f6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        textarea {
+            width: calc(100% - 40px);
+            height: 200px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .copy-button {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .copy-button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DuckyScript Converter</h1>
+        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        <button onclick="convertToDuckyScript()">Convert</button>
+        <textarea id="outputText" readonly placeholder="Converted DuckyScript will appear here..."></textarea>
+        <button class="copy-button" onclick="copyOutput()">Copy Converted Text</button>
+    </div>
+    
+    <script>
+        function convertToDuckyScript() {
+            const inputText = document.getElementById('inputText').value;
+            // Split the input text into lines and then handle splitting by punctuation
+            const lines = inputText.split('\n').flatMap(line => line.split(/(?<=\.)\s+|(?<=\?)\s+|(?<=!)\s+/));
+
+            // Create DuckyScript lines with two ENTER commands
+            const duckyLines = lines.map(line => {
+                const trimmedLine = line.trim();
+                if (trimmedLine) {
+                    return `STRING ${trimmedLine}\nENTER\nENTER`;
+                }
+                return '';
+            }).filter(line => line !== '');
+
+            // Join the lines with newlines for the final output
+            const duckyScript = duckyLines.join('\n');
+            document.getElementById('outputText').value = duckyScript;
+        }
+
+        function copyOutput() {
+            const outputText = document.getElementById('outputText');
+            outputText.select();
+            document.execCommand('copy');
+            alert('Copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
