@@ -2,6 +2,8 @@
 
 This project is a simple web application that converts text input into DuckyScript, a scripting language used with USB Rubber Ducky, a keystroke injection tool. The tool splits input text into lines and handles splitting by punctuation, then formats it into DuckyScript commands.
 
+https://modded-soldier-9.github.io/text2ducky/
+
 ## Features 🛠️
 
 - **Text Input:** Enter the text you want to convert into the provided text area.
