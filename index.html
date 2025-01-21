@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="styles.css">
     <script>
         tailwind.config = {
             darkMode: 'class'
@@ -41,27 +42,27 @@
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
             <h2 class="text-lg font-medium text-gray-800 dark:text-gray-100 mb-4">Quick Templates</h2>
             <div class="flex flex-wrap gap-3">
-                <button onclick="loadTemplate('notepad')" class="px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-sm group relative">
+                <button onclick="loadTemplate('notepad')" class="px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-sm tooltip-trigger">
                     Open Notepad
-                    <span class="invisible group-hover:visible absolute left-0 top-10 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48 z-10">
+                    <span class="tooltip bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
                         Opens Notepad and types a message
                     </span>
                 </button>
-                <button onclick="loadTemplate('ipconfig')" class="px-3 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 transition-colors text-sm group relative">
+                <button onclick="loadTemplate('ipconfig')" class="px-3 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 transition-colors text-sm tooltip-trigger">
                     IP Config
-                    <span class="invisible group-hover:visible absolute left-0 top-10 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48 z-10">
+                    <span class="tooltip bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
                         Opens CMD and runs ipconfig command
                     </span>
                 </button>
-                <button onclick="loadTemplate('rickroll')" class="px-3 py-2 bg-pink-500 text-white rounded hover:bg-pink-600 transition-colors text-sm group relative">
+                <button onclick="loadTemplate('rickroll')" class="px-3 py-2 bg-pink-500 text-white rounded hover:bg-pink-600 transition-colors text-sm tooltip-trigger">
                     Rickroll
-                    <span class="invisible group-hover:visible absolute left-0 top-10 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48 z-10">
+                    <span class="tooltip bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
                         Opens the classic Rickroll video
                     </span>
                 </button>
-                <button onclick="loadTemplate('custom')" class="px-3 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors text-sm group relative">
+                <button onclick="loadTemplate('custom')" class="px-3 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors text-sm tooltip-trigger">
                     Custom Message
-                    <span class="invisible group-hover:visible absolute left-0 top-10 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48 z-10">
+                    <span class="tooltip bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
                         Example of typing multiple messages
                     </span>
                 </button>
@@ -147,276 +148,9 @@
         </div>
     </main>
 
-    <!-- Command Reference Section -->
-    <section class="max-w-5xl mx-auto px-4 pb-8">
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Command Reference</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Basic Commands -->
-                <div class="space-y-2">
-                    <h3 class="font-medium text-gray-700 dark:text-gray-300">Basic Commands</h3>
-                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('STRING Hello')">
-                            STRING - Type text
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Types the text that follows the command
-                            </span>
-                        </li>
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('ENTER')">
-                            ENTER - Press Enter key
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Simulates pressing the Enter key
-                            </span>
-                        </li>
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('DELAY 1000')">
-                            DELAY - Add delay (ms)
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Adds a pause in milliseconds
-                            </span>
-                        </li>
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('REM This is a comment')">
-                            REM - Add comment
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Adds a comment (not executed)
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Special Keys -->
-                <div class="space-y-2">
-                    <h3 class="font-medium text-gray-700 dark:text-gray-300">Special Keys</h3>
-                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('GUI')">
-                            GUI - Windows Key
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Windows/Super key for system commands
-                            </span>
-                        </li>
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('ALT')">
-                            ALT - Alt Key
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Use with TAB to switch windows
-                            </span>
-                        </li>
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('SHIFT')">
-                            SHIFT - Shift Key
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Used in key combinations
-                            </span>
-                        </li>
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('CTRL')">
-                            CTRL - Control Key
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Common shortcut key (Copy, Paste, etc)
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Common Combinations -->
-                <div class="space-y-2">
-                    <h3 class="font-medium text-gray-700 dark:text-gray-300">Common Combinations</h3>
-                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('GUI r')">
-                            GUI r - Run dialog
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Opens Windows Run dialog box
-                            </span>
-                        </li>
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('ALT TAB')">
-                            ALT TAB - Switch window
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Switch between open windows
-                            </span>
-                        </li>
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('CTRL SHIFT ESC')">
-                            CTRL SHIFT ESC - Task Manager
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Open Windows Task Manager
-                            </span>
-                        </li>
-                        <li class="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer group relative" onclick="insertCommand('CTRL c')">
-                            CTRL c - Copy
-                            <span class="invisible group-hover:visible absolute left-0 -bottom-8 bg-gray-800 text-white text-xs px-2 py-1 rounded w-48">
-                                Copy selected text to clipboard
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-4 right-4 transform translate-y-full opacity-0 transition-all duration-300"></div>
 
-    <script>
-        // Template definitions
-        const templates = {
-            notepad: `REM Open Notepad
-GUI r
-DELAY 500
-STRING notepad
-ENTER
-DELAY 1000
-STRING Hello from DuckyScript!
-ENTER`,
-            ipconfig: `REM Open CMD and run ipconfig
-GUI r
-DELAY 500
-STRING cmd
-ENTER
-DELAY 1000
-STRING ipconfig /all
-ENTER`,
-            rickroll: `REM Open Rick Roll video
-GUI r
-DELAY 500
-STRING https://www.youtube.com/watch?v=dQw4w9WgXcQ
-ENTER`,
-            custom: `REM Custom message example
-DELAY 1000
-STRING Hello, this is a custom message!
-ENTER
-DELAY 500
-STRING How are you today?
-ENTER`
-        };
-
-        function formatScript() {
-            const input = document.getElementById('inputText');
-            const lines = input.value.split('\n');
-            
-            // Format each line
-            const formattedLines = lines
-                .map(line => line.trim()) // Remove extra whitespace
-                .filter(line => line) // Remove empty lines
-                .map(line => {
-                    // Add standard delays after special commands
-                    if (line.startsWith('GUI') || line.startsWith('ALT') || line.startsWith('CTRL')) {
-                        return `${line}\nDELAY 500`;
-                    }
-                    // Add comments before string commands if not already a comment
-                    if (line.startsWith('STRING') && !lines.includes(`REM ${line}`)) {
-                        return `REM Input text\n${line}`;
-                    }
-                    return line;
-                });
-
-            input.value = formattedLines.join('\n');
-            showToast('Script formatted!');
-        }
-
-        function loadTemplate(type) {
-            if (templates[type]) {
-                document.getElementById('inputText').value = templates[type];
-                showToast('Template loaded!');
-            }
-        }
-
-        function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
-        }
-
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.className = `fixed bottom-4 right-4 px-6 py-3 rounded-lg transform transition-all duration-300 ${
-                type === 'error' ? 'bg-red-500' : 'bg-green-500'
-            } text-white`;
-            
-            setTimeout(() => {
-                toast.style.transform = 'translateY(0)';
-                toast.style.opacity = '1';
-            }, 1);
-
-            setTimeout(() => {
-                toast.style.transform = 'translateY(100%)';
-                toast.style.opacity = '0';
-            }, 3000);
-        }
-
-        function convertToDuckyScript() {
-            const inputText = document.getElementById('inputText').value;
-            
-            if (!inputText.trim()) {
-                showToast('Please enter some text first', 'error');
-                return;
-            }
-
-            // If the input already contains DuckyScript commands, use it as is
-            if (inputText.includes('STRING') || inputText.includes('DELAY') || inputText.includes('GUI')) {
-                document.getElementById('outputText').value = inputText;
-                showToast('Script ready!');
-                return;
-            }
-
-            // Otherwise, convert normal text to DuckyScript
-            const lines = inputText.split('\n').flatMap(line =>
-                line.split(/(?<=\.)\s+|(?<=\?)\s+|(?<=!)\s+/)
-            );
-
-            const duckyLines = lines.map(line => {
-                const trimmedLine = line.trim();
-                if (trimmedLine) {
-                    return `STRING ${trimmedLine}\nENTER`;
-                }
-                return '';
-            }).filter(line => line !== '');
-
-            const duckyScript = duckyLines.join('\n');
-            document.getElementById('outputText').value = duckyScript;
-            showToast('Conversion complete!');
-        }
-
-        async function copyOutput() {
-            const outputText = document.getElementById('outputText').value;
-            if (!outputText.trim()) {
-                showToast('Nothing to copy', 'error');
-                return;
-            }
-            try {
-                await navigator.clipboard.writeText(outputText);
-                showToast('Copied to clipboard!');
-            } catch (err) {
-                showToast('Failed to copy text', 'error');
-            }
-        }
-
-        function clearAll() {
-            document.getElementById('inputText').value = '';
-            document.getElementById('outputText').value = '';
-            const previewSection = document.getElementById('previewSection');
-            if (previewSection) {
-                previewSection.classList.add('hidden');
-            }
-            showToast('Cleared all text');
-        }
-
-        // Add keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey || e.metaKey) {
-                switch(e.key.toLowerCase()) {
-                    case 'enter':
-                        e.preventDefault();
-                        convertToDuckyScript();
-                        break;
-                    case 'b':
-                        e.preventDefault();
-                        formatScript();
-                        break;
-                    case 'k':
-                        e.preventDefault();
-                        clearAll();
-                        break;
-                    case 'c':
-                        if (document.activeElement === document.getElementById('outputText')) {
-                            e.preventDefault();
-                            copyOutput();
-                        }
-                        break;
-                }
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
