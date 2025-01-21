@@ -1,0 +1,28 @@
+/* Custom styles beyond Tailwind base styles */
+
+/* Toast animation classes */
+.toast-enter {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast-exit {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+/* Preview section transitions */
+.preview-section-hidden {
+    display: none;
+}
+
+/* Tooltip styles */
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+}
+
+.tooltip-trigger:hover .tooltip {
+    visibility: visible;
+}
