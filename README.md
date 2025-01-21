@@ -4,6 +4,28 @@ This project is a modern web application that converts text input into DuckyScri
 
 https://modded-soldier-9.github.io/text2ducky/
 
+## Version History 📅
+
+### v2.0 (Current)
+- Added dark mode support
+- Introduced quick templates for common scripts
+- Added interactive command reference with tooltips
+- Implemented keyboard shortcuts (Ctrl+Enter, Ctrl+B, Ctrl+K)
+- Added script formatting functionality
+- Introduced character and line counting
+- Added toast notifications for user feedback
+- Modernized UI with Tailwind CSS
+- Added automatic DuckyScript command detection
+- Added preview section for scripts
+
+### v1.0
+- Initial release
+- Basic text to DuckyScript conversion
+- Copy to clipboard functionality
+- Line-by-line text processing
+- Punctuation-aware text splitting
+- Simple and functional UI
+
 ## Features 🛠️
 
 - **Dark Mode Support:** Toggle between light and dark themes for comfortable viewing
